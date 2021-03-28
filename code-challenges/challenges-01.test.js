@@ -60,12 +60,30 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
 ------------------------------------------------------------------------------------------------ */
 
+describe("Testing challenge 4", () => {
+  test("It should provide an array of strings, that get uppercased, and a '!' at the end", () => {
+    expect(speaker(["hello", "301", "students"], greeting)).toStrictEqual([
+      "HELLO!",
+      "301!",
+      "STUDENTS!",
+    ]);
+  });
+});
+
 const greeting = (word) => {
   // Solution code here...
+
+  return word.toUpperCase() + "!";
 };
 
 const speaker = (words, callback) => {
   // Solution code here...
+  let result = [];
+  words.forEach((word) => {
+    let ready = callback(word);
+    result.push(ready);
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
