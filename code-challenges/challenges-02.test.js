@@ -45,6 +45,9 @@ describe("Testing challenge 2", () => {
 
 const appendTheEnd = (str) => {
   // Solution code here...
+
+  let result = str + " The end.";
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
