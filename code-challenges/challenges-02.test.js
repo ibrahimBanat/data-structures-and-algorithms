@@ -68,7 +68,6 @@ const appendFirstToLast = (arr) => {
   let newArr = arr;
 
   newArr.push(arr[0]);
-  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,9 +84,22 @@ const octavia = { fullName: 'Octavia Estelle Butler' };
 addBirthYearProperty(octavia, 1947);
 console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
+/* 
+/* 
+describe("Testing challenge 4", () => {
+  test("It should add a property to an object", () => {
+    const a = { fullName: "Octavia Butler" };
+    addBirthYearProperty(a, 1947);
+
+    expect(a.yearBorn).toStrictEqual(1947);
+  });
+});
+
+*/
 
 const addBirthYearProperty = (obj, year) => {
   // Solution code here...
+  obj.yearBorn = year;
 };
 
 /* ------------------------------------------------------------------------------------------------
