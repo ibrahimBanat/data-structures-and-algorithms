@@ -63,11 +63,17 @@ const sortNames = (arr) => {
   // Solution code here...
   console.log(arr[1]);
   arr.sort((a, b) => {
-    return a > b ? 1 : a < b ? -1 : 0;
+    if (a > b) {
+      return 1;
+    }
+    if (a < b) {
+      return -1;
+    } else {
+      return 0;
+    }
   });
-  console.log(arr[1]);
 };
-sortNames(["able", "Bob"]);
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
