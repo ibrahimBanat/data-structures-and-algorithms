@@ -50,12 +50,22 @@ CHALLENGE 2
 Write a function called sortNames that takes an array of names and sorts them alphabetically. Capital letters should come before lowercase letters.
 
 For example: 'Cat' would come before 'apple'
+describe("Testing challenge 2", () => {
+  test("It should return an array of names sorted alphabetically", () => {
+    expect(sortNames(["able", "Bob"])[0]).toStrictEqual("Bob");
+  });
+});
+if false => keep 
+if true => b comes first
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
   // Solution code here...
+  arr.sort((a, b) => {
+    return a < b;
+  });
 };
-
+sortNames(["able", "Bob"]);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
