@@ -62,7 +62,7 @@ if true => b comes first
 const sortNames = (arr) => {
   // Solution code here...
   console.log(arr[1]);
-  arr.sort((a, b) => {
+  return arr.sort((a, b) => {
     if (a > b) {
       return 1;
     }
