@@ -144,7 +144,14 @@ Here is an example of the input:
 const sortByPrice = (arr) => {
   // Solution code here...
   return arr.sort((a, b) => {
-    console.log(a.price, b.price);
+    if (a.price > b.price) {
+      return 1;
+    }
+    if (a.price < b.price) {
+      return -1;
+    } else {
+      return 0;
+    }
   });
 };
 sortByPrice([
