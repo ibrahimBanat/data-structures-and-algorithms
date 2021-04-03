@@ -78,10 +78,30 @@ CHALLENGE 4
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, largest to smallest.
 
 HINT: Do it with a custom sort callback, not with using `.reverse()`. ;) 
+describe("Testing challenge 4", () => {
+  test("It should sort high-to-low the numbers in an array", () => {
+    const nums = [3, 4, 5, 6, 7];
+    expect(sortBackwards(nums)).toStrictEqual([7, 6, 5, 4, 3]);
+    expect(sortBackwards([3, 2, 1])).toStrictEqual([3, 2, 1]);
+    expect(sortBackwards([12, 20, 3])).toStrictEqual([20, 12, 3]);
+    expect(sortBackwards([])).toStrictEqual([]);
+    expect(sortBackwards([1])).toStrictEqual([1]);
+  });
+});
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
   // Solution code here...
+  return arr.sort((a, b) => {
+    if (a < b) {
+      return 1;
+    }
+    if (a > b) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
