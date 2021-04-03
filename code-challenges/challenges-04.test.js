@@ -169,6 +169,14 @@ describe("Testing challenge 6", () => {
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  let reg = /[A-J]/;
+  let citesAJ = [];
+  arr.forEach((element) => {
+    if (reg.test(element[0])) {
+      citesAJ.push(element);
+    }
+  });
+  return citesAJ;
 };
 
 /* ------------------------------------------------------------------------------------------------
