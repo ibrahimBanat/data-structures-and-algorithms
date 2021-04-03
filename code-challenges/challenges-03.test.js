@@ -24,9 +24,10 @@ function lower(str) {
 const updateAnimal = (arr, callback) => {
   // Solution code here...
   let newArr = [];
-  arr.array.forEach((element) => {
+  arr.forEach((element) => {
     newArr.push(callback(element));
   });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,6 +40,14 @@ For example: 'Cat' would come before 'apple'
 
 const sortNames = (arr) => {
   // Solution code here...
+  return arr.sort((a, b) => {
+    if (a > b) {
+      return 1;
+    }
+    if (a < b) {
+      return -1;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
