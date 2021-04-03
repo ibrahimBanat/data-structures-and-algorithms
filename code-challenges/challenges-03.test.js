@@ -11,19 +11,6 @@ Push each updated animal string into the new array. Return the new array.
 
 HINT: Look at the tests to see how the callback functions are used.
 
-describe('Testing challenge 1', () => {
-  test('It should return an array of uppercase animal names', () => {
-    const arr = ['BeAr', 'lIon'];
-    expect(updateAnimal(arr, upper)[0]).toStrictEqual('BEAR');
-    expect(updateAnimal(arr, upper)[1]).toStrictEqual('LION');
-  });
-  test('It should return an array of lowercase animal names', () => {
-    const arr = ['BeAr', 'lIon'];
-    expect(updateAnimal(arr, lower)[0]).toStrictEqual('bear');
-    expect(updateAnimal(arr, lower)[1]).toStrictEqual('lion');
-  });
-});
-
 ------------------------------------------------------------------------------------------------ */
 
 function upper(str) {
@@ -37,11 +24,9 @@ function lower(str) {
 const updateAnimal = (arr, callback) => {
   // Solution code here...
   let newArr = [];
-  arr.forEach((element) => {
+  arr.array.forEach((element) => {
     newArr.push(callback(element));
   });
-  console.log(newArr);
-  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,21 +35,11 @@ CHALLENGE 2
 Write a function called sortNames that takes an array of names and sorts them alphabetically. Capital letters should come before lowercase letters.
 
 For example: 'Cat' would come before 'apple'
-describe("Testing challenge 2", () => {
-  test("It should return an array of names sorted alphabetically", () => {
-    expect(sortNames(["able", "Bob"])[0]).toStrictEqual("Bob");
-  });
-});
-if false => keep 
-if true => b comes first
 ------------------------------------------------------------------------------------------------ */
 
 const sortNames = (arr) => {
   // Solution code here...
-  return arr.sort((a, b) => {
-    if (a < b) return -1;
-    if (a > b) return 1;
-  });
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
