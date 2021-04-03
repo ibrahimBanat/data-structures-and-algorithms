@@ -25,9 +25,9 @@ function lower(str) {
 const updateAnimal = (arr, callback) => {
   // Solution code here...
   let newArr = [];
-
   arr.forEach((element) => {
     newArr.push(callback(element));
+  });
   return newArr;
 };
 
@@ -44,7 +44,6 @@ For example: 'Cat' would come before 'apple'
 const sortNames = (arr) => {
   // Solution code here...
   return arr.sort((a, b) => {
-
     if (a > b) {
       return 1;
     }
@@ -67,7 +66,6 @@ HINT: Beware... JS default is "Lexical" ordering.
 const sortNumbers = (arr) => {
   // Solution code here...
   return arr.sort((a, b) => {
-
     if (a < b) {
       return -1;
     }
@@ -76,7 +74,6 @@ const sortNumbers = (arr) => {
     } else {
       return 0;
     }
-
   });
 };
 
@@ -103,7 +100,6 @@ describe("Testing challenge 4", () => {
 const sortBackwards = (arr) => {
   // Solution code here...
   return arr.sort((a, b) => {
-
     if (a < b) {
       return 1;
     }
@@ -112,7 +108,6 @@ const sortBackwards = (arr) => {
     } else {
       return 0;
     }
-
   });
 };
 
@@ -141,7 +136,6 @@ const alphabetize = (arr) => {
       return 0;
     }
   });
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -162,7 +156,6 @@ Here is an example of the input:
 const sortByPrice = (arr) => {
   // Solution code here...
   return arr.sort((a, b) => {
-
     if (a.price > b.price) {
       return 1;
     }
