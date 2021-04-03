@@ -18,19 +18,36 @@ const addTwo = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not. 
+Write a function named containsW that takes in a string. 
+This function should use a regular expression pattern to return true 
+if the string contains the letter 'w' in lower case or false if it does not. 
 
+describe("Testing challenge 2", () => {
+  test("It should return true if the input contains a lower case w", () => {
+    expect(containsW("hello world")).toBe(true);
+  });
+  test("It should return false if the input contains an upper case W", () => {
+    expect(containsW("Hello World")).toBe(false);
+  });
+  test("It should return false if the input does not contain a w", () => {
+    expect(containsW("hello everyone")).toBe(false);
+  });
+});
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
   // Solution code here...
+  let re = /w/g;
+
+  return re.test(str);
 };
-let x;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named isNum that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains a number, and false if the input does not contain a number.
+Write a function named isNum that takes in a string or number of any length. 
+This function should use a regular expression pattern to return true if the input 
+contains a number, and false if the input does not contain a number.
 
 For example:
 12345 returns true
@@ -41,12 +58,16 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
+  let re = /[0-9]/gm;
+  return re.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named containsWorld that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains the word 'world' all in lower-case letters, and false if the input does not.
+Write a function named containsWorld that takes in a string or number of any length. 
+This function should use a regular expression pattern to return true if the input 
+contains the word 'world' all in lower-case letters, and false if the input does not.
 
 ------------------------------------------------------------------------------------------------ */
 
