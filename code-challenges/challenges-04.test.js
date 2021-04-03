@@ -73,6 +73,8 @@ contains the word 'world' all in lower-case letters, and false if the input does
 
 const containsWorld = (input) => {
   // Solution code here...
+  let reg = /world/g;
+  return reg.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
