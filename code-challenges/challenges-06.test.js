@@ -145,13 +145,31 @@ HR has asked you to change the data to make it easier to print so that it looks 
   'Ada Lovelace: 222-349-9842',
   'Alan Turing: 222-853-5933'
 ]
+describe("Testing challenge 4", () => {
+  test("It should return an an array of names and numbers", () => {
+    const startingObj = {
+      "Grace Hopper": "222-303-5938",
+      "Ada Lovelace": "222-349-9842",
+      "Alan Turing": "222-853-5933",
+    };
+
+    expect(
+      updateNumbers(startingObj).includes("Grace Hopper: 222-303-5938")
+    ).toBe(true);
+  });
+});
 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
   // Solution code here...
-};
+  let arrayedObject = [];
 
+  Object.entries(obj).forEach((item) => {
+    arrayedObject.push(item.join(": "));
+  });
+  return arrayedObject;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -161,6 +179,9 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  for (const object in characters) {
+    houses.push(characters[object].house);
+  }
   return houses;
 };
 
