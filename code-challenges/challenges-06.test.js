@@ -177,12 +177,12 @@ Write a function named getHouses that returns a new array containing the names o
 ------------------------------------------------------------------------------------------------ */
 
 const getHouses = (arr) => {
-  // let houses = [];
+  let houses = [];
   // Solution code here...
-  // for (const object in characters) {
-  //   houses.push(characters[object].house);
-  // }
-  // return houses;
+  for (const object in characters) {
+    houses.push(characters[object].house);
+  }
+  return houses;
 };
 
 /*------------------------------------------------------------------------------------------------
