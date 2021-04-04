@@ -108,14 +108,25 @@ const getCourseKeys = (obj) => {
 CHALLENGE 3
 
 Write a function named checkValues that takes in an object and a value and returns true if the value is in the object.
+describe("Testing challenge 3", () => {
+  test("It should return true if the value is in the object", () => {
+    expect(checkValues({ class: "301" }, "301")).toBe(true);
+  });
 
+  test("It should return false if the value is not in the object", () => {
+    expect(checkValues({ class: "301" }, "401")).toBe(false);
+  });
+});
 
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
   // Solution code here...
-  // if () {
-  // }
+  if (Object.values(obj) == value) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
