@@ -14,9 +14,7 @@ describe('Testing challenge 1', () => {
 const replaceZeros = (string) => {
   // Solution code here...
   let re = /0/g;
-  string.replace(re, "zero");
-
-  return string;
+  return string.replace(re, "zero");
 };
 
 /* ------------------------------------------------------------------------------------------------
