@@ -71,10 +71,11 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
-  let poweredMathArray = arr.map((item, idx) => {
-    return Math.pow(2, item);
-  });
-  return poweredMathArray;
+  let powerArr = [];
+  for (let index = 0; index < arr.length; index++) {
+    powerArr.push(Math.powe(2, arr[index]));
+  }
+  return powerArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -96,11 +97,17 @@ const forEachTwoToThe = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named mapTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 1 and your forEachTwoToThe function from challenge 2, but uses map instead of a for loop or forEach.
+Write a function named mapTwoToThe that produces the same output as your 
+forLoopTwoToThe function from challenge 1 and your forEachTwoToThe function from challenge 2, 
+but uses map instead of a for loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  let poweredMathArray = arr.map((item, idx) => {
+    return Math.pow(2, item);
+  });
+  return poweredMathArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
