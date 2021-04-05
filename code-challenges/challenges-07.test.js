@@ -21,6 +21,8 @@ const replaceZeros = (string) => {
 CHALLENGE 2
 
 Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1. 
+
+
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
@@ -34,17 +36,33 @@ const addOne = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named addQuestion that, given an array of strings, uses map to return a new array containing each string followed by a question mark character.
+Write a function named addQuestion that, given an array of strings, uses map to return a new array containing 
+each string followed by a question mark character.
+describe("Testing challenge 3", () => {
+  test("It should add a question mark to the end of each string", () => {
+    expect(addQuestion(["hello", "301", "students"])).toStrictEqual([
+      "hello?",
+      "301?",
+      "students?",
+    ]);
+  });
+});
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
   // Solution code here...
+  let questionedArray = arr.map((item, idx) => {
+    return item + "?";
+  });
+  return questionedArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named forLoopTwoToThe that, given an array of integers as input, iterates over the array and returns a new array. The returned array should contain the result of raising 2 to the power of the original input element.
+Write a function named forLoopTwoToThe that, given an array of integers as input, 
+iterates over the array and returns a new array. The returned array should contain the result of 
+raising 2 to the power of the original input element.
 
 You may choose to complete this challenge using a for loop, for...in syntax, or for...of syntax.
 
@@ -53,6 +71,9 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
+  let poweredMathArray = arr.map((item, idx) => {
+    return Math.pow(2, idx);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
