@@ -73,7 +73,7 @@ const forLoopTwoToThe = (arr) => {
   // Solution code here...
   let powerArr = [];
   for (let index = 0; index < arr.length; index++) {
-    powerArr.push(Math.powe(2, arr[index]));
+    powerArr.push(Math.pow(2, arr[index]));
   }
   return powerArr;
 };
