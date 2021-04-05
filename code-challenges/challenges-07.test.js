@@ -86,6 +86,11 @@ same output as your forLoopTwoToThe function from challenge 1, but uses forEach 
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
+  let powerArr = [];
+  arr.forEach((element) => {
+    powerArr.push(Math.pow(2, element));
+  });
+  return powerArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
