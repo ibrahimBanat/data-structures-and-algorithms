@@ -38,9 +38,9 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
-  let re = /and/g;
+  let re = "and";
   let andArray = arr.filter((item) => {
-    if (re.test(item)) {
+    if (item.includes(re)) {
       return item;
     }
   });
@@ -69,7 +69,8 @@ const oddValues = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named filterStringsWithVowels that, given an array of strings as input, uses filter to return an array with only words that contain vowels.
+Write a function named filterStringsWithVowels that, 
+given an array of strings as input, uses filter to return an array with only words that contain vowels.
 
 The callback function to filter should include or utilize a regular expression pattern.
 
@@ -78,6 +79,8 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
+  let pattern = /[aeiou]/g;
+  // let voweled = arr.
 };
 
 /* ------------------------------------------------------------------------------------------------
