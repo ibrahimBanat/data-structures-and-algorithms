@@ -79,20 +79,32 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
-  let pattern = /[aeiou]/g;
-  // let voweled = arr.
+  let re = /[aeiou]/;
+  let voweled = arr.filter((item) => {
+    if (re.test(item)) {
+      return item;
+    }
+  });
+  return voweled;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named notInFirstArray that, given two arrays as input, uses filter to return an array of all the elements in the second array that are not included in the first array.
+Write a function named notInFirstArray that, given two arrays as input, 
+uses filter to return an array of all the elements in the second array that are not included in the first array.
 
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  let notIncluded = arr.filter((item) => {
+    if (!forbiddenValues.includes(item)) {
+      return item;
+    }
+  });
+  return notIncluded;
 };
 
 /* ------------------------------------------------------------------------------------------------
