@@ -59,12 +59,24 @@ uses reduce to find the total amount purchased. Each object contains the keys `i
   purchasePrice: 399
 }
 
+describe("Testing challenge 3", () => {
+  test("It should add the purchase price", () => {
+    expect(
+      addPurchases([
+        { item: "switch", purchasePrice: 399 },
+        { item: "toothpaste", purchasePrice: 2 },
+      ])
+    ).toStrictEqual(401);
+    expect(addPurchases([])).toStrictEqual(0);
+  });
+});
+
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
   // Solution code here...
   let amoutnPurchased = arr.reduce((purchaseValue, obj, idx) => {
-    purchaseValue += obj.purchasePrice;
+    return (purchaseValue += obj.purchasePrice);
   }, 0);
   return amoutnPurchased;
 };
@@ -86,8 +98,7 @@ describe("Testing challenge 4", () => {
 const countNumberOfElements = (arr) => {
   // Solution code here...
   let length = arr.reduce((totalLength, item) => {
-    totalLength += 1;
-    return totalLength;
+    return (totalLength += 1);
   }, 1);
   return length;
 };
