@@ -63,24 +63,40 @@ uses reduce to find the total amount purchased. Each object contains the keys `i
 
 const addPurchases = (arr) => {
   // Solution code here...
+  let amoutnPurchased = arr.reduce((purchaseValue, obj, idx) => {
+    purchaseValue += obj.purchasePrice;
+  }, 0);
+  return amoutnPurchased;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named countNumberOfElements that, given an array as input, uses reduce to count the number of elements in the array.
+Write a function named countNumberOfElements that, given an array as input, 
+uses reduce to count the number of elements in the array.
 
 Note: You may not use the array's built-in length property.
+describe("Testing challenge 4", () => {
+  test("It should return the length of the array", () => {
+    expect(countNumberOfElements([1, 2, 3, 4, 5])).toStrictEqual(5);
+  });
+});
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
+  let length = arr.reduce((totalLength, item) => {
+    totalLength += 1;
+    return totalLength;
+  }, 1);
+  return length;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named returnNames that, given the Star Wars data, below, uses reduce to return an array containing the names of the characters.
+Write a function named returnNames that, given the Star Wars data, below, 
+uses reduce to return an array containing the names of the characters.
 ------------------------------------------------------------------------------------------------ */
 
 let starWarsData = [
@@ -138,6 +154,11 @@ let starWarsData = [
 
 const returnNames = (arr) => {
   // Solution code here...
+  let namesOfCharac = arr.reduce((nameOf, obj, idx) => {
+    nameOf.push(obj.name);
+    return nameOf;
+  }, []);
+  return namesOfCharac;
 };
 
 /* ------------------------------------------------------------------------------------------------
