@@ -30,17 +30,29 @@ function transformToLis(obj) {
 CHALLENGE 2
 
 Write a function named addValues that, given an array of numbers as input, uses reduce to add the values in the array.
-
+describe("Testing challenge 2", () => {
+  test("It should add the values of an array", () => {
+    expect(addValues([1, 2, 3, 4, 5])).toStrictEqual(15);
+    expect(addValues([])).toStrictEqual(0);
+    expect(addValues([1, 2, 3, 4, -5])).toStrictEqual(5);
+  });
+});
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
   // Solution code here...
+  let addedfinal = arr.reduce((base, number, idx) => {
+    base += number;
+    return base;
+  }, 0);
+  return addedfinal;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named addPurchases that, given an array of objects as input, uses reduce to find the total amount purchased. Each object contains the keys `item` and `purchasePrice` like the example.
+Write a function named addPurchases that, given an array of objects as input, 
+uses reduce to find the total amount purchased. Each object contains the keys `item` and `purchasePrice` like the example.
 
 {
   item: 'switch'
