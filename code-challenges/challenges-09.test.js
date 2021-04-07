@@ -99,7 +99,7 @@ const countNumberOfElements = (arr) => {
   // Solution code here...
   let length = arr.reduce((totalLength, item) => {
     return (totalLength += 1);
-  }, 1);
+  }, 0);
   return length;
 };
 
