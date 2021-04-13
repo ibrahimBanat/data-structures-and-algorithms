@@ -57,11 +57,13 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
-  let sum = matrix.forEach((row) => {
-    let rowSum = row.reduce((acc, current) => acc + current);
-    return rowSum;
+  let result = 0;
+  matrix.forEach((row) => {
+    row.forEach((item) => {
+      return (result += item);
+    });
   });
-  return sum;
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
