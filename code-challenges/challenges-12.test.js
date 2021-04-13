@@ -167,6 +167,13 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  let treats = 0;
+  arr.forEach((item) => {
+    item.items.forEach((properraty) => {
+      properraty.name === "Treats" ? (treats = properraty.quantity) : treats;
+    });
+  });
+  return treats;
 };
 
 /* ------------------------------------------------------------------------------------------------
