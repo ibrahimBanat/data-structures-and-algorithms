@@ -78,8 +78,9 @@ const standardizePhoneNumbers = (arr) => {
   // Solution code here...
   return arr.reduce((acc, value) => {
     acc.push(
-      value.substring(1, 4) + value.substring(6, 9) + value.substring(10, 13)
+      value.substring(1, 4) + value.substring(6, 9) + value.substring(10, 15)
     );
+    return acc;
   }, []);
 };
 
@@ -130,9 +131,11 @@ describe("Testing challenge 6", () => {
 
 const allHappy = (arr) => {
   // Solution code here...
-  let flag;
+  let flag = true;
   arr.forEach((item) => {
-    item.includes(":)") ? (flag = true) : (flag = false);
+    if (!item.includes(":)")) {
+      flag = false;
+    }
   });
   return flag;
 };
