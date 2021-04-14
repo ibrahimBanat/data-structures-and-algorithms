@@ -68,13 +68,19 @@ const findHappiness = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named standardizePhoneNumbers that takes in an array of phone number strings in (XXX) XXX-XXXX format and returns an array with the phone number strings in XXXXXXXXXX format.
+Write a function named standardizePhoneNumbers that takes in an array of 
+phone number strings in (XXX) XXX-XXXX format and returns an array with the phone number strings in XXXXXXXXXX format.
 
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  return arr.reduce((acc, value) => {
+    acc.push(
+      value.substring(1, 4) + value.substring(6, 9) + value.substring(10, 13)
+    );
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,6 +93,12 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  let odd = str.split("").forEach((character) => {
+    if (str.indexOf(character) % 2) {
+    } else {
+      return;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
