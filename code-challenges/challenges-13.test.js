@@ -93,22 +93,48 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
-  let odd = str.split("").forEach((character) => {
-    if (str.indexOf(character) % 2) {
-    } else {
-      return;
+
+  let odd = "";
+  str.split("").forEach((character, index) => {
+    if (index % 2 !== 0) {
+      odd += character;
     }
   });
+  return odd;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 
 
-Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
+Write a function named allHappy that takes in an array of strings and returns a 
+Boolean indicating whether all those strings contain ":)".
+
+describe("Testing challenge 6", () => {
+  test("It should correctly assess whether all the strings are happy", () => {
+    const words = [
+      "things",
+      "apple (:)",
+      ":)banana",
+      "missing that thing",
+      "cant:)aloupe",
+    ];
+
+    expect(allHappy(words)).toStrictEqual(false);
+    expect(allHappy(["apple (:)", ":)banana", "cant:)aloupe"])).toStrictEqual(
+      true
+    );
+    expect(allHappy([])).toStrictEqual(true);
+  });
+});
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
   // Solution code here...
+  let flag;
+  arr.forEach((item) => {
+    item.includes(":)") ? (flag = true) : (flag = false);
+  });
+  return flag;
 };
 
 /* ------------------------------------------------------------------------------------------------
