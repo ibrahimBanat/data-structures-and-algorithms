@@ -62,6 +62,7 @@ const findHappiness = (arr) => {
   let contains = arr.filter((item) => {
     return item.includes(":)");
   });
+  return contains;
 };
 
 /* ------------------------------------------------------------------------------------------------
