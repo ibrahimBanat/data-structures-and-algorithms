@@ -194,17 +194,17 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
-  let dataArr = data.reduce((acc, value, idx) => {
-    if (value.gender === "female" || value.gender === "male") {
-      if (idx) {
-        acc += " and " + value.name;
-      } else {
-        acc += value.name;
-      }
-      return acc;
+  data.sort((a, b) => {
+    if (a.heigt < b.height) {
+      return 1;
+    }
+    if (a.height > b.height) {
+      return -1;
+    } else {
+      return 0;
     }
   });
-  return dataArr;
+  return data[0].name;
 };
 
 /* ------------------------------------------------------------------------------------------------
