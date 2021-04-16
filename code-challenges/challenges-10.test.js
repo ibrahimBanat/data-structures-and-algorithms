@@ -63,20 +63,22 @@ CHALLENGE 3
 
 Write a function that, given an array of integer arrays as input, calculates the total sum of all the elements in the array.
 
-You may want to use filter, map, or reduce for this problem, but are not required to. You may need to use the same method more than once.
+You may want to use filter, map, or reduce for this problem, 
+but are not required to. Y
+ou may need to use the same method more than once.
 
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
   // Solution code here...
-  let newInputArr = input.reduce((acc, array) => {
-    array.map((item) => {
-      acc += item;
-      return acc;
-    }, 0);
+  let sum = 0;
+  input.map((value) => {
+    value.map((item) => {
+      sum += item;
+    });
   });
-  return newInputArr;
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
