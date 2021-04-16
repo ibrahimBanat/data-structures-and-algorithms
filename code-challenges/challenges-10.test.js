@@ -47,6 +47,15 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
+  let newArr = input.reduce((acc, array) => {
+    array.map((item) => {
+      if (item === target) {
+        acc++;
+      }
+    });
+    return acc;
+  }, 0);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
