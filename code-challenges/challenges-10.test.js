@@ -172,8 +172,18 @@ let starWarsData = [
   },
 ];
 
-let findMaleAndFemale = (data) => {
+let findMaleAndFemale = (input) => {
   // Solution code here...
+  let DataArray = input.filter((value) => {
+    if (value.gender === "female" || value.gender === "male") {
+      return value.name;
+    }
+  });
+  let subData = DataArray.map((p) => {
+    return p.name;
+  });
+  let final = subData.join(" and ");
+  return final;
 };
 
 /* ------------------------------------------------------------------------------------------------
