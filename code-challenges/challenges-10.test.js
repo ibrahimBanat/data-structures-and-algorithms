@@ -93,6 +93,17 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  let newArr = input.reduce((acc, array) => {
+    let array1 = array.reduce((ins, value) => {
+      if (value % 5 === 0 && typeof value !== "string") {
+        ins.push(Math.pow(2, value));
+      }
+      return ins;
+    }, []);
+    acc.push(array1);
+    return acc;
+  }, []);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -171,6 +182,17 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
+  let dataArr = data.reduce((acc, value, idx) => {
+    if (value.gender === "female" || value.gender === "male") {
+      if (idx) {
+        acc += " and " + value.name;
+      } else {
+        acc += value.name;
+      }
+      return acc;
+    }
+  });
+  return dataArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
