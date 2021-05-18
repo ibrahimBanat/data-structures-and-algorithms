@@ -13,19 +13,31 @@ class ArrayShift {
    */
   waiter(array, num) {
     let shifted = this.shifter(array, num);
-
+    console.log("f", shifted);
     return shifted;
   }
   /**
    * shifting the input array against specified input
    * @param {Array} array;
    * @param {any} num;
-   * @returns array input array after shifting
+   * @returns shifted output array after shifting the input array
    */
   shifter(array, num) {
     let index = this.index(array);
-    array.splice(index, 0, num);
-    return array;
+    let newArr = [];
+    for (let i = 0; i < array.length + 1; i++) {
+      if (i < index) {
+        newArr[i] = array[i];
+      }
+      if (i == index) {
+        newArr[i] = num;
+      }
+      if (i > index) {
+        newArr[i] = array[i - 1];
+      }
+    }
+
+    return newArr;
   }
   /**
    * calculate the middle index for input array
