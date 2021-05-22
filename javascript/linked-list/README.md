@@ -26,10 +26,10 @@ the approach is navigation forward only
 
 ## white Board
 
-![whiteboard](./assets/linked-list.jpg)
+![whiteboard](../assets/linked-list.jpg)
 [better view](https://miro.com/app/board/o9J_lCnsZhM=/)
 
 ### code
 
-![Linked list1](./assets/ll-code1.png)
-![Linked list2](./assets/ll-code2.png)
+![Linked list1](../assets/ll-code1.png)
+![Linked list2](../assets/ll-code2.png)
