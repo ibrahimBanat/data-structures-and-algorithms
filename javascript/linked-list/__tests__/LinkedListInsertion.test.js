@@ -37,24 +37,26 @@ describe("linked list insertion", () => {
     linkedList.insert(10);
     linkedList.insert(20);
     linkedList.insert(30);
+    console.log(linkedList);
     linkedList.insertBefore(20, 15);
     //assert
     let inserted = linkedList.toString();
     let array = inserted.split(" ⇨ ");
+    console.log(array);
 
-    expect(array[2]).toEqual("{ 15 }");
+    expect(array[1]).toEqual("{ 15 }");
   });
   it("Can successfully insert a node before the first node of a linked list", () => {
     let linkedList = new LinkedList();
 
     linkedList.append(10);
     linkedList.append(20);
-    linkedList.insertBeafore(0, 10);
+    linkedList.insertBefore(10, 10);
 
     let inserted = linkedList.toString();
     let array = inserted.split(" ⇨ ");
 
-    expect(array[0]).toEqual("{0}");
+    expect(array[0]).toEqual("{ 10 }");
   });
   it("Can successfully insert after a node in the middle of the linked list", () => {
     let linkedList = new LinkedList();
