@@ -8,6 +8,7 @@ let linkedListError = new LinkedListErrors();
 class LinkedList {
   constructor() {
     this.head = null;
+    this.length = 0;
   }
   chcekForInput(value) {
     if (value === undefined || value === Infinity) {
@@ -22,12 +23,14 @@ class LinkedList {
     let node = new Node(value);
     if (!this.head) {
       this.head = node;
+      this.length++;
     } else {
       let currentNode = this.head;
       while (currentNode.next) {
         currentNode = currentNode.next;
       }
       currentNode.next = node;
+      this.length++;
     }
   }
   addNewHead(value) {
@@ -36,9 +39,11 @@ class LinkedList {
 
     if (!this.head) {
       this.head = newNode;
+      this.length++;
     } else {
       newNode.next = this.head;
       this.head = newNode;
+      this.length++;
     }
   }
   includes(value) {
@@ -66,6 +71,7 @@ class LinkedList {
   }
   append(value) {
     let node = new Node(value);
+    this.length++;
     if (!this.head) {
       this.head = node;
     } else {
@@ -78,31 +84,49 @@ class LinkedList {
   }
   insertAfter(val, newVal) {
     let node = new Node(newVal);
-    let current = this.head;
-    while (current) {
-      if (current.val === val) {
-        let temp = current.next;
+    let nodeLooper = this.head;
+    while (nodeLooper) {
+      if (nodeLooper.val === val) {
+        let temp = nodeLooper.next;
         this.length++;
-        current.next = node;
+
+        nodeLooper.next = node;
         node.next = temp;
+        this.length++;
+
         return;
       }
-      current = current.next;
+      nodeLooper = nodeLooper.next;
     }
+
     return "Exception";
   }
   insertBefore(val, newVal) {
     let node = new Node(newVal);
-    let current = this.head;
-    while (current.next) {
-      if (current.next.value === val) {
-        let temp = current.next;
+    let nodeLooper = this.head;
+    while (nodeLooper.next) {
+      if (nodeLooper.next.value === val) {
+        let temp = nodeLooper.next;
         this.length++;
-        current.next = node;
+        nodeLooper.next = node;
         node.next = temp;
+
         return;
       }
-      current = current.next;
+      nodeLooper = nodeLooper.next;
+    }
+    return "Exception";
+  }
+  kthFromEnd(k) {
+    let nodeLooper = this.head;
+    let position = this.length - 1 - k;
+    let index = 0;
+    while (nodeLooper) {
+      if (position === index) {
+        return nodeLooper.value;
+      }
+      nodeLooper = nodeLooper.next;
+      index++;
     }
     return "Exception";
   }
