@@ -4,6 +4,24 @@ Part of growing as a programmer is to practice, practice, practice. Throughout t
 
 The daily challenges will be posted by the instructor at the end of lecture every day. Plan to focus on this task with your partner every day after class until 6 p.m., completing as much as possible during this time, then complete the remainder of the challenges on your own, as needed.
 
+## Challenges List
+
+|                                               Assignment Link                                               |                                                           Assignment code / Implementaion                                                            |
+| :---------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [Code Challenge 01](https://codefellows.github.io/code-301-guide/curriculum/class-01/challenges/ASSIGNMENT) |              [forEach](https://github.com/ibrahimBanat/data-structures-and-algorithms/blob/main/code-challenges/challenges-01.test.js)               |
+| [Code Challenge 02](https://codefellows.github.io/code-301-guide/curriculum/class-06/challenges/ASSIGNMENT) |        [Value vs. Reference](https://github.com/ibrahimBanat/data-structures-and-algorithms/blob/main/code-challenges/challenges-02.test.js)         |
+| [Code Challenge 03](https://codefellows.github.io/code-301-guide/curriculum/class-04/challenges/ASSIGNMENT) |                [Sort](https://github.com/ibrahimBanat/data-structures-and-algorithms/blob/main/code-challenges/challenges-03.test.js)                |
+| [Code Challenge 04](https://codefellows.github.io/code-301-guide/curriculum/class-08/challenges/ASSIGNMENT) |        [Regular Expressions](https://github.com/ibrahimBanat/data-structures-and-algorithms/blob/main/code-challenges/challenges-04.test.js)         |
+| [Code Challenge 05](https://codefellows.github.io/code-301-guide/curriculum/class-07/challenges/ASSIGNMENT) |     [Split, join, slice, splice](https://github.com/ibrahimBanat/data-structures-and-algorithms/blob/main/code-challenges/challenges-05.test.js)     |
+| [Code Challenge 06](https://codefellows.github.io/code-301-guide/curriculum/class-09/challenges/ASSIGNMENT) |     [Split, join, slice, splice](https://github.com/ibrahimBanat/data-structures-and-algorithms/blob/main/code-challenges/challenges-06.test.js)     |
+| [Code Challenge 07](https://codefellows.github.io/code-301-guide/curriculum/class-02/challenges/ASSIGNMENT) |                [Map](https://github.com/ibrahimBanat/data-structures-and-algorithms/blob/main/code-challenges/challenges-07.test.js)                 |
+| [Code Challenge 08](https://codefellows.github.io/code-301-guide/curriculum/class-03/challenges/ASSIGNMENT) |               [Filter](https://github.com/ibrahimBanat/data-structures-and-algorithms/blob/main/code-challenges/challenges-08.test.js)               |
+| [Code Challenge 09](https://codefellows.github.io/code-301-guide/curriculum/class-05/challenges/ASSIGNMENT) |               [Reduce](https://github.com/ibrahimBanat/data-structures-and-algorithms/blob/main/code-challenges/challenges-09.test.js)               |
+| [Code Challenge 10](https://codefellows.github.io/code-301-guide/curriculum/class-11/challenges/ASSIGNMENT) |          [Chaining Methods](https://github.com/ibrahimBanat/data-structures-and-algorithms/blob/main/code-challenges/challenges-10.test.js)          |
+| [Code Challenge 12](https://codefellows.github.io/code-301-guide/curriculum/class-10/challenges/ASSIGNMENT) |       [Two-dimensional arrays](https://github.com/ibrahimBanat/data-structures-and-algorithms/blob/main/code-challenges/challenges-12.test.js)       |
+| [Code Challenge 13](https://codefellows.github.io/code-301-guide/curriculum/class-13/challenges/ASSIGNMENT) | [Includes, Every, Substring, charAt](https://github.com/ibrahimBanat/data-structures-and-algorithms/blob/main/code-challenges/challenges-13.test.js) |
+|                                                                                                             |                                                                                                                                                      |
+
 ## Challenge Execution and Testing
 
 At the end of lecture each day, a new challenge will be published in Canvas. Copy the contents of the file into **this folder** in the `data-structures-and-algorithms` repository and work on the individual problems for the day. It's a good practice to add and commit regularly as you finish each problem in the day's challenge. When you are finished, push your branch to GitHub to create a PR.
