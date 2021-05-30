@@ -50,11 +50,7 @@ class Stack {
    * @returns boolean
    */
   isEmpty() {
-    if (this.size === 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.size === 0;
   }
   /**
    * throw an execpt if pop() or peek() called for an empty stack.
