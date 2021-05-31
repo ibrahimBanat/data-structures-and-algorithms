@@ -2,44 +2,30 @@
 
 ## Challenge
 
-Implement a Queue using two Stacks.
+First-in, First out Animal Shelter.
 
 ## Approach & Efficiency
 
-- Space : O(n)
+- Space : O(1)
 - Time : O(n)
 
 ## API
 
 1. Stack
 
-   - `push()`: look at the first available index and add the element there.
-   - `pop()`: remove from the top of the stack.
-   - `peek()`: shows which element would be removed next, but doesnot actually remove it.
-   - `size()`: it will look at the size variable.
-   - `isEmpty()`: return whether or not there is an elements in the the stack.
-
 2. ## Queue
-   - `enqueue()`: add element to the queue.
-   - `dequeue()`: it will remove the first element enqueued to the queue.
-   - `peek()`: return the first added without removing it.
-   - `empty()`: checks whether if the the queue is empty or not.
+   - `enqueue(animal)`: add element to the queue of dog || cat.
+   - `dequeue(pref)`: it will remove the first element enqueued to the queue of dog || cat.
 
 ## white Board
 
-![whiteboard](../assets/queuefromstack.jpg)
-[Better View](https://miro.com/app/board/o9J_lB36Ifk=/)
+![whiteboard](../assets/animalClass.jpg)
+[Better View](https://miro.com/app/board/o9J_lB-RP_k=/)
 
-## files structure
+## code
 
-```shell
-.
-├── PseudoQueue.js
-├── README.md
-└── __tests__
-    └── pseudoQueue.test.js
-```
+![](../assets/animalClass.png)
 
 ## Tests & coverage
 
-![queue from stack test coverage](../assets/queuefromstack-test.PNG)
+![queue from stack test coverage](../assets/animal-test.PNG)
