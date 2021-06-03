@@ -31,7 +31,6 @@ describe("zip linked list", () => {
     linkedList2.append(400);
     console.log("ll2", linkedList2);
     linkedList3.append(100);
-    linkedList3.append(300);
     linkedList3.append(200);
     linkedList3.append(400);
     expect(zipList(linkedList1, linkedList2).toString()).toEqual(

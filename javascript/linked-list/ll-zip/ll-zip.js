@@ -3,25 +3,28 @@
 const LinkedList = require("../LinkedList");
 
 function zipList(ll1, ll2) {
-  let linkedList = new LinkedList();
-  let current1 = ll1.head;
-  let current2 = ll2.head;
-  let length = ll1.length + ll2.length;
-
-  if (length === 0 || ll1.length !== ll2.length) {
+  if (ll1.length === 0 || ll2.length === 0 || ll1.length !== ll2.length) {
     return "Exception";
   }
-  for (let index = 0; index < length; index++) {
-    if (index % 2 !== 0) {
-      linkedList.append(current2.value);
-      current2 = current2.next;
-    }
-    if (index % 2 === 0) {
-      linkedList.append(current1.value);
-      current1 = current1.next;
-    }
+  let current1 = ll1.head;
+  let current2 = ll2.head;
+
+  let ll1Length = ll1.length;
+  let ll2Length = ll2.length;
+
+  while (current1 && current2.next) {
+    ll1.insertAfter(current1.value, current2.value);
+
+    current1 = current1.next.next;
+    current2 = current2.next;
   }
-  console.log(linkedList);
-  return linkedList;
+  if (ll1Length === ll2Length) {
+    ll1.append(current2.value);
+  } else if (ll1Length < ll2Length) {
+    ll1.append(current2.value);
+  } else if (ll1Length > ll2Length) {
+    ll1.insertAfter(current1.value, current2.value);
+  }
+  return ll1;
 }
 module.exports = zipList;
