@@ -1,11 +1,15 @@
-"use strict";
-const Node = require("./node");
+## whiteboard
 
+![](../../assets/binary-search-tree.jpg)
+[better view](https://miro.com/app/board/o9J_lAszY0M=/)
+
+## code
+
+```javascript
 class BinarySearchTree {
   constructor(root = null) {
     this.root = root;
   }
-
   add(value) {
     let node = new Node(value);
     if (this.root === null) {
@@ -44,4 +48,4 @@ class BinarySearchTree {
     }
   }
 }
-module.exports = BinarySearchTree;
+```

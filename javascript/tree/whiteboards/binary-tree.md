@@ -1,15 +1,15 @@
-"use strict";
+## whiteboard
 
+![](../../assets/binary-tree.jpg)
+[better view](https://miro.com/app/board/o9J_lAs50bQ=/)
+
+## code
+
+```javascript
 class BinaryTree {
   constructor() {
     this.array = [];
   }
-  /**
-   * traverse through tree in the following order:
-   * root node → left node → right node
-   * @param {node} root node object with value, left, right attributes
-   * @returns array contains preOrdered elements
-   */
   preOrder(root) {
     //P -> L -> R
     let preOrdered;
@@ -21,12 +21,6 @@ class BinaryTree {
       return preOrdered;
     }
   }
-  /**
-   * traverse through tree in the following order:
-   *  left node → right node → root node
-   * @param {node} root node object with value, left, right attributes
-   * @returns array contains postOrdered elements
-   */
   postOrder(root) {
     //L -> R -> P
     if (root !== null) {
@@ -36,12 +30,6 @@ class BinaryTree {
       return this.array;
     }
   }
-  /**
-   * traverse through tree in the following order:
-   *  left node → root node → right node
-   * @param {node} root node object with value, left, right attributes
-   * @returns array contains inOrdered elements
-   */
   inOrder(root) {
     // L -> P -> R
     if (root !== null) {
@@ -52,4 +40,4 @@ class BinaryTree {
     }
   }
 }
-module.exports = BinaryTree;
+```
