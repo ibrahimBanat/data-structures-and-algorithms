@@ -2,32 +2,37 @@
 const Node = require("./node");
 
 class BinaryTree {
-  constructor(root) {
-    this.root = root;
+  constructor() {
     this.array = [];
   }
   preOrder(root) {
     //P -> L -> R
+    let preOrdered;
     if (root !== null) {
-      this.array[this.array.length] = root.value;
+      this.array.push(root.value);
       this.preOrder(root.left);
       this.preOrder(root.right);
-      let preOrdered = this.array;
-      this.array = [];
+      preOrdered = this.array;
       return preOrdered;
     }
   }
   postOrder(root) {
     //L -> R -> P
-    this.postOrder(root.left);
-    this.postOrder(root.right);
-    this.array[this.array.length] = root.value;
+    if (root !== null) {
+      this.postOrder(root.left);
+      this.postOrder(root.right);
+      this.array[this.array.length] = root.value;
+      return this.array;
+    }
   }
   inOrder(root) {
     // L -> P -> R
-    this.inOrder(root.left);
-    this.array[this.array.length] = root.value;
-    this.inOrder(root.right);
+    if (root !== null) {
+      this.inOrder(root.left);
+      this.array[this.array.length] = root.value;
+      this.inOrder(root.right);
+      return this.array;
+    }
   }
 }
 module.exports = BinaryTree;
