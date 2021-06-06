@@ -1,8 +1,11 @@
 "use strict";
+let Node = require("./node");
 
 class BinaryTree {
-  constructor() {
+  constructor(root) {
     this.array = [];
+    this.max = null;
+    this.root = root;
   }
   /**
    * traverse through tree in the following order:
@@ -51,5 +54,28 @@ class BinaryTree {
       return this.array;
     }
   }
+  findMaximumValue(value = this.root) {
+    if (!this.root) {
+      throw new Error("your tree is empty");
+    }
+    //variable temp will store temp's data
+    if (!this.max) {
+      this.max = this.root.value;
+    }
+    if (value.left) {
+      this.findMaximumValue(value.left);
+    }
+    if (value.value > this.max) {
+      this.max = value.value;
+    }
+    if (value.right) {
+      this.findMaximumValue(value.right);
+    }
+    if (value.value > this.max) {
+      this.max = value.value;
+    }
+    return this.max;
+  }
 }
+
 module.exports = BinaryTree;
