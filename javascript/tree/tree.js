@@ -1,5 +1,11 @@
 "use strict";
-let Node = require("./node");
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.children = [];
+  }
+}
 
 class BinaryTree {
   constructor(root) {
@@ -75,6 +81,25 @@ class BinaryTree {
       this.max = value.value;
     }
     return this.max;
+  }
+  fizzBuzz(tree) {
+    this.root = tree.root;
+    const fizzBuzzTree = (node) => {
+      if (fizzBuzzTree(node.value % 15 === 0)) {
+        return (node.value = "FizzBuzz");
+      } else if (fizzBuzzTree(node.value % 5 === 0)) {
+        return (node.value = "Buzz");
+      } else if (fizzBuzzTree(node.value % 3 === 0)) {
+        return (node.value = "Fizz");
+      } else node.val = `${node.value}`;
+      if (node.children.length) {
+        for (let i = 0; i < node.children.length; i++) {
+          fizzBuzzTree(node.children[i]);
+        }
+      }
+
+      fizzBuzzTree(this.root);
+    };
   }
 }
 
