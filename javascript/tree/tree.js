@@ -1,4 +1,5 @@
 "use strict";
+const Queue = require("../stacksAndQueues/Queue");
 
 class Node {
   constructor(value) {
@@ -82,6 +83,23 @@ class BinaryTree {
     }
     return this.max;
   }
+  breadthFirst() {
+    if (!this.root) throw new Error("tree is empty");
+    let breadthArr = [];
+    let queue = new Queue();
+    queue.enqueue(this.root);
+    while (!queue.isEmpty()) {
+      if (queue.top.value.left) {
+        queue.enqueue(queue.top.value.left);
+      }
+      if (queue.top.value.right) {
+        queue.enqueue(queue.top.value.right);
+      }
+      breadthArr.push(queue.dequeue().value);
+    }
+    return breadthArr;
+  }
+
   fizzBuzz(tree) {
     this.root = tree.root;
     const fizzBuzzTree = (node) => {

@@ -1,4 +1,4 @@
-# Binary Trees & Binary Search Trees
+# Fizz Buzz challenge
 
 ## Challenge
 
