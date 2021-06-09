@@ -1,5 +1,12 @@
 "use strict";
-let Node = require("./node");
+const Queue = require("../stacksAndQueues/Queue");
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.children = [];
+  }
+}
 
 class BinaryTree {
   constructor(root) {
@@ -75,6 +82,42 @@ class BinaryTree {
       this.max = value.value;
     }
     return this.max;
+  }
+  breadthFirst() {
+    if (!this.root) throw new Error("tree is empty");
+    let breadthArr = [];
+    let queue = new Queue();
+    queue.enqueue(this.root);
+    while (!queue.isEmpty()) {
+      if (queue.top.value.left) {
+        queue.enqueue(queue.top.value.left);
+      }
+      if (queue.top.value.right) {
+        queue.enqueue(queue.top.value.right);
+      }
+      breadthArr.push(queue.dequeue().value);
+    }
+    return breadthArr;
+  }
+
+  fizzBuzz(tree) {
+    this.root = tree.root;
+    const fizzBuzzTree = (node) => {
+      if (fizzBuzzTree(node.value % 15 === 0)) {
+        return (node.value = "FizzBuzz");
+      } else if (fizzBuzzTree(node.value % 5 === 0)) {
+        return (node.value = "Buzz");
+      } else if (fizzBuzzTree(node.value % 3 === 0)) {
+        return (node.value = "Fizz");
+      } else node.val = `${node.value}`;
+      if (node.children.length) {
+        for (let i = 0; i < node.children.length; i++) {
+          fizzBuzzTree(node.children[i]);
+        }
+      }
+
+      fizzBuzzTree(this.root);
+    };
   }
 }
 
