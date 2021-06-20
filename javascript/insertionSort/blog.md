@@ -138,7 +138,7 @@ function insertSort(array) {
 
 ```javascript
 function insertSort(array) {
-  for (let item = 1; item < array.length - 1; item++) {
+  for (let item = 1; item < array.length; item++) {
     //looping through the input list
   }
 }
@@ -148,7 +148,7 @@ function insertSort(array) {
 
 ```javascript
 function insertSort(array) {
-  for (let item = 0; item < array.length - 1; item++) {
+  for (let item = 1; item < array.length; item++) {
     for (let index = item; index > 0; index--) {
       //looping through the sub-sorted array down
       //to the first eleemnt
@@ -161,7 +161,7 @@ function insertSort(array) {
 
 ```javascript
 function insertSort(array) {
-  for (let item = 0; item < array.length - 1; item++) {
+  for (let item = 1; item < array.length; item++) {
     for (let index = item; index > 0; index--) {
       if (array[index] < array[index - 1]) {
         const temp = array[index];
@@ -177,7 +177,7 @@ function insertSort(array) {
 
 ```javascript
 function insertSort(array) {
-  for (let item = 0; item < array.length - 1; item++) {
+  for (let item = 1; item < array.length; item++) {
     for (let index = item; index > 0; index--) {
       if (array[index] < array[index - 1]) {
         const temp = array[index];
@@ -195,7 +195,7 @@ function insertSort(array) {
 
 ```javascript
 function insertSort(array) {
-  for (let item = 0; item < array.length - 1; item++) {
+  for (let item = 1; item < array.length; item++) {
     for (let index = item; index > 0; index--) {
       if (array[index] < array[index - 1]) {
         const temp = array[index];
@@ -223,7 +223,7 @@ in conclusion: the implementation of the algorthim looks like:
  */
 
 function insertSort(array) {
-  for (let item = 0; item < array.length - 1; item++) {
+  for (let item = 1; item < array.length; item++) {
     for (let index = item; index > 0; index--) {
       if (array[index] < array[index - 1]) {
         const temp = array[index];
@@ -243,3 +243,88 @@ module.exports = insertSort;
 i exported the function to use it inside the tests files.
 
 ## Testing and Validation
+
+i used [JEST] library which is created by facebook, first of all i have imported the method which i exported earlier, and then i tested if the function returns a sorted array or not.
+i have tested also the length of the output array which should not be changed.
+
+```javascript
+"use strict";
+
+const insertionSort = require("../insertionSort");
+
+describe("insertion sort testing", () => {
+  it("should sucessfully return sorted array", () => {
+    //arrange
+    let array = [8, 4, 23, 42, 16, 15];
+    //act
+    let sorted = insertionSort(array);
+    //assert
+    expect(sorted.length).toEqual(6);
+    expect(sorted[0]).toEqual(4);
+    expect(sorted).toEqual([4, 8, 15, 16, 23, 42]);
+  });
+});
+```
+
+after that we need to think about an edge case, if the input array is empty.
+in this case we need to add a condition which returns exception if the input array was empty.
+
+```javascript
+if(array.length === 0) {
+    retrun 'Exception';
+}
+```
+
+our method should look like this:
+
+```javascript
+"use strict";
+
+/**
+ * takes an array of intgers as input and returns
+ * and array of these intgers in sorted order from least ot the largest
+ * @param {Array} array of intgers
+ * @returns Array of sorted intgers
+ */
+
+function insertSort(array) {
+  if (array.length === 0) {
+    return "Exception";
+  }
+
+  for (let item = 1; item < array.length; item++) {
+    for (let index = item; index > 0; index--) {
+      if (array[index] < array[index - 1]) {
+        const temp = array[index];
+        array[index] = array[index - 1];
+        array[index - 1] = temp;
+      } else {
+        break;
+      }
+    }
+  }
+  return array;
+}
+
+module.exports = insertSort;
+```
+
+now if we want to test our method, we should pass an empty array to our method and expecting 'Exception' from it.
+
+```javascript
+it("should return exception when passing empty array", () => {
+  //arrange
+  let arr = [];
+  //act
+  let sorted = insertionSort(arr);
+  //assert
+  expect(sorted).toEqual("Exception");
+});
+```
+
+and it sucessfully worked as expected.
+this is the test coverage:
+
+![test](./assets/inseertioin.PNG)
+
+thats all for the insertioin sort, i hope you enjoyed reading this article. and see you in the next blog.

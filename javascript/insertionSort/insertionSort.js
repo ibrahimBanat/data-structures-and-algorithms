@@ -8,7 +8,11 @@
  */
 
 function insertSort(array) {
-  for (let item = 0; item < array.length - 1; item++) {
+  if (array.length === 0) {
+    return "Exception";
+  }
+
+  for (let item = 1; item < array.length; item++) {
     for (let index = item; index > 0; index--) {
       if (array[index] < array[index - 1]) {
         const temp = array[index];
