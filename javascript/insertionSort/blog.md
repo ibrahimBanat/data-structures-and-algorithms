@@ -81,4 +81,165 @@ moving to the next element, which is (44), figure where to insert this extracted
 
 becasue (44) is not smaller than (3) then insert the lement at the current position. the sub-sorted list should look like this:
 
-![third element](./assets/4.png)
+![thirdelement](./assets/4.PNG)
+
+now we will excract the first un-sorted element which is (38). by comparing 38 to the last element in the sub-sorted list and since 38 is less than 44 then we will do a swap.
+
+![fourhtiteration](./assets/5.PNG)
+
+and now figure where to insert extracted element; comparing with sorted element 3. becasue 38 is not less than 3 then we will insert it at currenct position. the sub-sorted list should look like this:
+
+![fifthiteration](./assets/6.PNG)
+
+the algorithm will continue looping until it sort all of the element in the array.
+
+the final sorted array should look like:
+
+![finalarray](./assets/7.PNG)
+
+now after showin a visiulizition for the inseration sort, we will move to an important thing, which makes other sorting algorthims better than insertioin sort, it's the Big(O) notation.
+
+## Big(O) notation
+
+[Big O](https://adrianmejia.com/algorithms-for-dummies-part-1-sorting/#Big-O-Notation) is defined as the asymptotic upper limit of a function. In plain english, it means that is a function that cover the maximum values a function could take. As we saw a little earlier this notation help us to predict performance and compare algorithms.
+
+| Growth Rate | Name         |
+| ----------- | ------------ |
+| 1           | Constant     |
+| log(n)      | Logarithmic  |
+| n           | Linear       |
+| n log(n)    | Linearithmic |
+| n^2         | Quadratic    |
+| n^3         | Cubic        |
+| 2^n         | Exponential  |
+
+what makes insertion sort terrable is that it takes quadratic growth rate becasue it contains nested loops.
+
+the [running times](https://www.khanacademy.org/computing/computer-science/algorithms/insertion-sort/a/analysis-of-insertion-sort) for insertion sort:
+
+- Worst case: O(n^2).
+- Best case: O(n).
+- Average case for a random array: O(n^2).
+- "Almost sorted" case: O(n).
+
+now we will move to the implementation insertion sort in javascript.
+
+## Implementation
+
+1. first of all we will create our function `insertSort`.
+
+```javascript
+function insertSort(array) {
+  //creating insertion sort function
+}
+```
+
+2. we will through the array starting form the index of `1` becasue as we said the first element is already sorted.
+
+```javascript
+function insertSort(array) {
+  for (let item = 1; item < array.length - 1; item++) {
+    //looping through the input list
+  }
+}
+```
+
+3. now we will loop over the sub-sorted array from the last element until we reach the first element to make sure that we positioned our element correctly.
+
+```javascript
+function insertSort(array) {
+  for (let item = 0; item < array.length - 1; item++) {
+    for (let index = item; index > 0; index--) {
+      //looping through the sub-sorted array down
+      //to the first eleemnt
+    }
+  }
+}
+```
+
+4. now we will compare if the current item in the ainput array is less than the previous item, then we will store the current item in a temp variable and swap it with the previous item.
+
+```javascript
+function insertSort(array) {
+  for (let item = 0; item < array.length - 1; item++) {
+    for (let index = item; index > 0; index--) {
+      if (array[index] < array[index - 1]) {
+        const temp = array[index];
+        array[index] = array[index - 1];
+        array[index - 1] = temp;
+      }
+    }
+  }
+}
+```
+
+5. we will keep loop over the sub-sorted array until the current item reaches it's sorted postion. and we will break the loop for the sub-sorted array.
+
+```javascript
+function insertSort(array) {
+  for (let item = 0; item < array.length - 1; item++) {
+    for (let index = item; index > 0; index--) {
+      if (array[index] < array[index - 1]) {
+        const temp = array[index];
+        array[index] = array[index - 1];
+        array[index - 1] = temp;
+      } else {
+        break;
+      }
+    }
+  }
+}
+```
+
+6. final step we will return the array, which will be modified to be sorted.
+
+```javascript
+function insertSort(array) {
+  for (let item = 0; item < array.length - 1; item++) {
+    for (let index = item; index > 0; index--) {
+      if (array[index] < array[index - 1]) {
+        const temp = array[index];
+        array[index] = array[index - 1];
+        array[index - 1] = temp;
+      } else {
+        break;
+      }
+    }
+  }
+  return array;
+}
+```
+
+in conclusion: the implementation of the algorthim looks like:
+
+```javascript
+"use strict";
+
+/**
+ * takes an array of intgers as input and returns
+ * and array of these intgers in sorted order from least ot the largest
+ * @param {Array} array of intgers
+ * @returns Array of sorted intgers
+ */
+
+function insertSort(array) {
+  for (let item = 0; item < array.length - 1; item++) {
+    for (let index = item; index > 0; index--) {
+      if (array[index] < array[index - 1]) {
+        const temp = array[index];
+        array[index] = array[index - 1];
+        array[index - 1] = temp;
+      } else {
+        break;
+      }
+    }
+  }
+  return array;
+}
+
+module.exports = insertSort;
+```
+
+i exported the function to use it inside the tests files.
+
+## Testing and Validation
