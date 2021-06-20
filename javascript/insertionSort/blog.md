@@ -327,4 +327,6 @@ this is the test coverage:
 
 ![test](./assets/inseertioin.PNG)
 
-thats all for the insertioin sort, i hope you enjoyed reading this article. and see you in the next blog.
+thats all for the insertioin sort, i hope you enjoyed reading this article.
+this is link for the code from [My Github](https://github.com/ibrahimBanat/data-structures-and-algorithms/tree/main/javascript/insertionSort)
+and see you in the next blog.
