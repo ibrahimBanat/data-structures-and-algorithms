@@ -1,18 +1,18 @@
 "use strict";
 
-function repeatedWord(paragraph) {
-  const words = paragraph.split(/[\s,]+/);
+function repeatedWord(parag) {
+  const words = parag.split(/[\s,]+/);
 
   let array = [];
 
   for (let word = 0; word < words.length; word++) {
-    let word = words[word].toLowerCase();
-    const isContain = array.includes(word);
+    let lowerWord = words[word].toLowerCase();
+    const isContain = array.includes(lowerWord);
 
-    if (isContain) return word;
-    array.push(word);
+    if (isContain) return lowerWord;
+    array.push(lowerWord);
   }
-  return "None repeated Words";
+  return "no duplicate words!";
 }
 
 module.exports = repeatedWord;
